@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Безопасность России начинается с нас</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    section {
+      padding: 30px 15px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #004080;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+    p, li {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .tip-btn, .quiz-btn, .category-btn {
+      display: inline-block;
+      margin: 6px 5px;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      background: #0080ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .tip-btn:hover, .quiz-btn:hover, .category-btn:hover {
+      background: #0059b3;
+    }
+    .tip-box, .quiz-box {
+      margin-top: 15px;
+      padding: 18px;
+      background: #e6f0ff;
+      border-left: 6px solid #004080;
+      border-radius: 6px;
+      font-size: 1.2rem;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Безопасность России начинается с нас</h1>
+</header>
+
+<section>
+  <h2>О проекте</h2>
+  <p>Проект создан с целью показать, что безопасность страны начинается с каждого человека, а не только с государственных служб. В нашем современном мире безопасность — это не только защита от опасностей, но и способность быть внимательным, ответственным и осведомлённым. Этот сайт помогает пользователям понять, как простые действия и правильные привычки могут сделать нашу жизнь безопаснее.</p>
+  <p>Здесь можно найти советы по разным категориям, пройти интерактивные мини-викторины, узнать о базовых правилах поведения в экстренных ситуациях, а также понять, как каждый может внести свой вклад в безопасность своего дома, школы и города. Сайт предназначен для школьников, родителей и всех, кто хочет стать ответственным гражданином.</p>
+</section>
+
+<section>
+  <h2>Советы по категориям</h2>
+  <div>
+    <button class="category-btn" onclick="showTip('road')">Дорога</button>
+    <button class="category-btn" onclick="showTip('fire')">Пожар</button>
+    <button class="category-btn" onclick="showTip('cyber')">Кибер</button>
+    <button class="category-btn" onclick="showTip('eco')">Экология</button>
+    <button class="category-btn" onclick="showTip('personal')">Личная</button>
+  </div>
+  <div id="tip" class="tip-box"></div>
+  <button class="tip-btn" onclick="showRandomTip()">Следующий совет</button>
+</section>
+
+<section>
+  <h2>Мини-викторина</h2>
+  <div id="quiz-section">
+    <p id="quiz-question"></p>
+    <div id="quiz-options"></div>
+    <div id="quiz-score" class="tip-box" style="display:none;"></div>
+  </div>
+  <button class="quiz-btn" onclick="startQuiz()">Начать викторину</button>
+</section>
+
+<section>
+  <h2>Наши цели</h2>
+  <ul>
+    <li><strong>Повышение осведомлённости о безопасности:</strong> мы хотим, чтобы каждый понимал, какие меры помогают защитить себя и окружающих в повседневной жизни. Это включает правила дорожного движения, пожарной безопасности, кибербезопасности, экологические привычки и личную внимательность.</li>
+    <li><strong>Развитие ответственности и внимательности:</strong> безопасность начинается с осознанного поведения. Мы учим пользователей думать о последствиях своих действий и учитывать безопасность других людей.</li>
+    <li><strong>Интерактивное обучение:</strong> через мини-викторины и советы мы показываем, что обучение безопасности может быть интересным и увлекательным, а не скучным и формальным.</li>
+    <li><strong>Привлечение школьников к активной позиции:</strong> сайт помогает детям и подросткам понять, что они сами могут вносить вклад в безопасность школы, дома и города, а не только ждать помощи от взрослых или служб.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Как каждый может помочь</h2>
+  <p>Каждый человек может сделать вклад в безопасность своей страны и близких. Даже маленькие действия имеют значение:</p>
+  <ul>
+    <li>Следить за чистотой и порядком в школе и дворе, чтобы избежать травм и опасностей.</li>
+    <li>Сообщать взрослым или властям о подозрительных предметах и ситуациях.</li>
+    <li>Соблюдать правила дорожного движения и объяснять их младшим друзьям и родственникам.</li>
+    <li>Использовать безопасные пароли и учить этому других, чтобы защитить себя в интернете.</li>
+    <li>Сортировать мусор и заботиться об экологии, чтобы уменьшить риски пожаров и загрязнения.</li>
+  </ul>
+  <p>Помогая друг другу и действуя ответственно, каждый из нас делает Россию безопаснее и лучше для жизни.</p>
+</section>
+
+<footer>
+  &copy; 2025 Project by Daniil Paschenko
+</footer>
+
+<script>
+const tips = {
+  road: [
+    "При переходе через дорогу всегда смотри по сторонам и не отвлекайся телефоном.",
+    "Переходи улицу только по пешеходным переходам.",
+    "Не перебегай дорогу на красный свет и объясняй правила младшим."
+  ],
+  fire: [
+    "Если почувствовал запах дыма — покинь помещение и звони 101.",
+    "Не играй с огнём и соблюдай правила пожарной безопасности.",
+    "Следи за исправностью электроприборов и не оставляй их включенными без присмотра."
+  ],
+  cyber: [
+    "Не используй простой пароль типа 12345 — ставь длинный и уникальный.",
+    "Не открывай ссылки от незнакомых людей в интернете.",
+    "Обновляй программы и антивирус, чтобы защитить личные данные."
+  ],
+  eco: [
+    "Сортируй мусор — это помогает экологии и уменьшает риски.",
+    "Не выбрасывай отходы в воду или на улицу.",
+    "Сажай деревья и заботься о зелёных зонах, чтобы сохранять окружающую среду."
+  ],
+  personal: [
+    "Если увидел подозрительный предмет — не трогай и вызови взрослых/службы.",
+    "Будь внимателен к своим вещам и документам.",
+    "Помогай друзьям и соседям соблюдать правила безопасности."
+  ]
+};
+
+let lastCategory = 'road';
+
+function showTip(category) {
+  lastCategory = category;
+  const tipArr = tips[category];
+  const tip = tipArr[Math.floor(Math.random() * tipArr.length)];
+  document.getElementById('tip').innerText = tip;
+}
+
+function showRandomTip() {
+  showTip(lastCategory);
+}
+
+// Викторина
+const quiz = [
+  {
+    question: "Что делать при пожаре в школе?",
+    options: ["Спрятаться под партой","Покинуть помещение и позвонить 101","Продолжать урок"],
+    answer: 1
+  },
+  {
+    question: "Что означает красный свет светофора?",
+    options: ["Идти","Стоять","Бежать"],
+    answer: 1
+  },
+  {
+    question: "Какой пароль безопаснее?",
+    options: ["qwerty","S!mpleP@ss2025","12345"],
+    answer: 1
+  }
+];
+
+let currentQ = 0;
+let score = 0;
+
+function startQuiz() {
+  currentQ = 0;
+  score = 0;
+  document.getElementById('quiz-score').style.display = 'none';
+  showQuestion();
+}
+
+function showQuestion() {
+  if(currentQ >= quiz.length){
+    const scoreBox = document.getElementById('quiz-score');
+    scoreBox.style.display = 'block';
+    scoreBox.innerText = `Викторина завершена! Ваш результат: ${score} из ${quiz.length}`;
+    document.getElementById('quiz-question').innerText = '';
+    document.getElementById('quiz-options').innerHTML = '';
+    return;
+  }
+  const q = quiz[currentQ];
+  document.getElementById('quiz-question').innerText = q.question;
+  const optionsDiv = document.getElementById('quiz-options');
+  optionsDiv.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-btn';
+    btn.innerText = opt;
+    btn.onclick = () => checkAnswer(i);
+    optionsDiv.appendChild(btn);
+  });
+}
+
+function checkAnswer(choice){
+  const correct = quiz[currentQ].answer;
+  if(choice === correct) score++;
+  currentQ++;
+  showQuestion();
+}
+</script>
+
+</body>
+</html>
